@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% set active = 'cp_task' %}
+
+{% set title = 'Task Dashboard'|trans %}
+
+{% set actions = [
+    {
+        'link': path('cp_task_create'),
+        'title': 'Create'|trans,
+    }
+] %}
+
+{% set breadcrumbs = [
+    {
+        'link': path('cp_task'), 'title': 'Home',
+    },
+    {
+        'title': 'Task Dashboard'
+    }
+] %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('assets/css/table.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block content %} 
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive" style="overflow: hidden;">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th><i class="icon-pencil7"></i></th>
+                            <th>Title</th>
+                            <th>Comment</th>
+                            <th>Date and Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for task in tasks %}
+                            {% include 'task/row.html.twig' %}
+                        {% endfor %}
+                    </tbody>
+                </table>                  
+            </div>
+        </div>
+        <div class="card-footer bg-white d-sm-flex justify-content-sm-between align-items-sm-center py-sm-2">
+            {{ knp_pagination_render(tasks) }}
+            <span>Total Results : {{ tasks.getTotalItemCount }}</span>
+        </div>
+    </div>
+<div id="delete_task_popup" class="modal fade" tabindex="-1">
+</div>
+{% endblock %}
+
+

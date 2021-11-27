@@ -1,0 +1,62 @@
+.form-price-range-filter {
+    text-align: center;
+}
+
+.tutorial-table {
+    width: 100%;
+    font-size: 13px;
+    border-top: #e5e5e5 1px solid;
+    border-spacing: initial;
+    margin: 20px 0px;
+    word-break: break-word;
+}
+
+.tutorial-table th {
+    background-color: #f5f5f5;
+    padding: 10px 20px;
+    text-align: left;
+}
+
+.tutorial-table td {
+    border-bottom: #f0f0f0 1px solid;
+    background-color: #ffffff;
+    padding: 10px 20px;
+}
+
+
+
+
+#min_requested_amount, #min_actual_amount{
+    float: left;
+    width: 52px;
+    padding: 5px 10px;
+    margin-right: 14px;
+}
+
+#slider-range, #actual-slider-range {
+    width: 75%;
+    float: left;
+    margin: 5px 0px 5px 0px;
+}
+
+#max_requested_amount, #max_actual_amount {
+    float: right;
+    width: 52px;
+    padding: 5px 10px;
+}
+
+.no-result {
+    padding: 20px;
+    background: #ffdddd;
+    text-align: center;
+    border-top: #d2aeb0 1px solid;
+    color: #6f6e6e;
+}
+
+.product-thumb {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border-radius: 50%;
+    vertical-align: middle;
+}

@@ -1,0 +1,7 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+app_admin_custom_routes:
+    resource: "../src/Controller/CP"
+    type: annotation
+    prefix: /cp

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block logincontent %}
+
+    <!-- Page content -->
+	<div class="page-content">
+
+		<!-- Main content -->
+		<div class="content-wrapper">
+			<!-- Content area -->
+			<div class="content d-flex justify-content-center align-items-center">
+				<div class="card mb-0">
+						<div class="card-body">
+							<h1>Register</h1>
+						 	{{ form_start(form) }}
+				            {{ form_widget(form) }}
+				            {{ form_end(form) }}
+						</div>
+						<div class="text-center">
+							<a href="{{ path('cp_app_login') }}">Login</a>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+

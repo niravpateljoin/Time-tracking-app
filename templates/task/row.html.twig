@@ -1,0 +1,12 @@
+<tr>
+    <td class="table-min-width">
+        <div class="list-icons">
+            <a href="{{ path('cp_task_update', {'id': task.getId()}) }}" class="list-icons-item">
+                <i class="icon-pencil7"></i>
+            </a>
+        </div>
+    </td>
+    <td>{{ task.getTitle }}</td>
+    <td>{{ task.getComment }}</td>
+    <td>{{ task.getCreatedAt|date('Y-m-d h:i:s') }}</td>
+</tr>

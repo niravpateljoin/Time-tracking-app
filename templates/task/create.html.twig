@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% set active = 'cp_task' %}
+
+{% set title = 'Create Task' %}
+
+{% set breadcrumbs = [
+    {
+        'link': path('cp_task'), 'title': 'Home',
+    },
+    {
+        'title': 'Create Task'
+    }
+] %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    {% form_theme form 'form/form.inline.html.twig' %}
+    <div class="card">
+        <div class="card-body">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

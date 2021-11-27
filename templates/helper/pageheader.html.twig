@@ -1,0 +1,41 @@
+<div class="page-header page-header-light">
+	<div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
+		<div class="d-flex">
+			{% if breadcrumbs is defined %}
+		        <ol class="breadcrumb">
+		            {% for breadcrumb in breadcrumbs %}
+		                {% if breadcrumb.link is defined %}
+		                    <li class="breadcrumb-item"><a href="{{ breadcrumb.link }}">{{ breadcrumb.title }}</a></li>
+		                {% else %}
+		                    <li class="breadcrumb-item active">{{ breadcrumb.title }}</li>
+		                {% endif %}
+		            {% endfor  %}
+		        </ol>
+		    {% endif %}
+		   
+		    
+			{# <div class="breadcrumb">
+				<a href="index.html" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Home</a>
+				<span class="breadcrumb-item active">Dashboard</span>
+			</div> #}
+			 {# {% if title is defined %}
+		        <h3>{{ title }}</h3>
+		    {% endif %} #}
+			<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+		</div>
+	</div>
+	
+	{% if actions is defined %}
+		<div class="breadcrumb-line header-elements-md-inline">
+	        <div class="text-right mt-1 mb-1">
+	            {% for action in actions %}
+	                <a href="{{ action.link }}" class="btn btn-primary">
+	                    {{ action.title }}
+	                </a>
+	            {% endfor %}
+	        </div><!-- /.page-title-actions -->
+        </div>
+    {% endif %}
+    
+   </div>
+

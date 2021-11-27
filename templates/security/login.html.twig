@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block logincontent %}
+
+    <!-- Page content -->
+	<div class="page-content">
+
+		<!-- Main content -->
+		<div class="content-wrapper">
+			<!-- Content area -->
+			<div class="content d-flex justify-content-center align-items-center">
+
+				<!-- Login form -->
+				<form class="login-form" method="post">
+					<div class="card mb-0">
+						<div class="card-body">
+							{% for type, flashes in app.session.flashbag.all %}
+							    {% for flash in flashes %}
+							        <div class="alert alert-{{ type }}">
+							        	<div class="alert-inner">
+							            	{{ flash }}
+							            </div><!-- /.alert-inner -->
+							        </div><!-- /.alert -->
+							    {% endfor %}
+							{% endfor %}
+							{% if error %}
+						        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+						    {% endif %}
+							<div class="text-center mb-3">
+								<i class="icon-reading icon-2x text-slate-300 border-slate-300 border-3 rounded-round p-3 mb-3 mt-1"></i>
+								<h5 class="mb-0">Login to your account</h5>
+								<span class="d-block text-muted">Enter your credentials below</span>
+							</div>
+
+							<div class="form-group form-group-feedback form-group-feedback-left">
+								<input type="email" placeholder="Email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
+								<div class="form-control-feedback">
+									<i class="icon-user text-muted"></i>
+								</div>
+							</div>
+
+							<div class="form-group form-group-feedback form-group-feedback-left">
+								<input type="password" name="password" id="inputPassword" class="form-control" required placeholder="Password">
+								<div class="form-control-feedback">
+									<i class="icon-lock2 text-muted"></i>
+								</div>
+							</div>
+							<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+							<div class="form-group">
+								<button type="submit" class="btn btn-primary btn-block">Sign in <i class="icon-circle-right2 ml-2"></i></button>
+							</div>
+
+							 <div class="text-center">
+								<a href="{{ path('cp_app_register') }}">Register</a>
+							</div>
+						</div>
+					</div>
+				</form>
+				<!-- /login form -->
+
+			</div>
+			<!-- /content area -->
+
+
+		
+
+		</div>
+		<!-- /main content -->
+
+	</div>
+{% endblock %}

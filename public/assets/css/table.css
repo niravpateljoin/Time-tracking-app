@@ -1,0 +1,29 @@
+.employee-profile-table tbody > tr > td 
+{
+	padding: 5px;
+	border-top: none;
+}
+
+.employee-profile-table tbody > tr > td:first-child 
+{
+	font-weight: bold;
+}
+
+.document-list-table tbody > tr:first-child > td:first-child 
+{
+	border: 1px solid #ddd;
+}
+
+.document-list-table {
+	border-collapse: separate;
+    border-spacing: 0 2px;
+    border: none;
+}
+
+.document-list-table .hidden {
+	display: none;
+}
+
+.document-list-table tbody > tr > td:first-child {
+	padding: 3px;
+} 
