@@ -9,7 +9,7 @@ A Symfony TEST TASK
 * git clone
 
 ```
-composer install
+**composer install** Or you can also run **composer update**
 setup DATABASE_URL in your .env file according your mysql host username and password.
 create database : `timetracking` in your phpmyadmin
 php bin/console doctrine:schema:update --force
